@@ -1,5 +1,7 @@
 # sys-clk
 
+⚠️ **THIS IS A MODIFIED VERSION OF THE ORIGINAL SYS-CLK THAT REMOVES ANY CLOCK LIMIT. PLEASE DON'T USE THIS VERSION OR YOUR SWITCH WILL BLOW UP.** ⚠️
+
 Switch sysmodule allowing you to set cpu/gpu/mem clocks according to the running application and docked state.
 
 ## Installation
