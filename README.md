@@ -7,7 +7,9 @@ Switch sysmodule allowing you to set cpu/gpu/mem clocks according to the running
 ## Installation
 
 The following instructions assumes you have a Nintendo Switch running Atmosphère, updated to at least the latest stable version.
-Copy the `atmosphere` folder at the root of your sdcard, overwriting files if prompted. Also copy the `config` folder if you're not updating, to include default settings.
+Copy the `atmosphere`, and `switch` folders at the root of your sdcard, overwriting files if prompted. Also copy the `config` folder if you're not updating, to include default settings.
+
+**Note:** sys-clk-overlay requires to have [Tesla](https://gbatemp.net/threads/tesla-the-nintendo-switch-overlay-menu.557362/) installed and running
 
 ## Relevant files
 
@@ -26,6 +28,19 @@ Copy the `atmosphere` folder at the root of your sdcard, overwriting files if pr
 * CSV file where the title id, profile, clocks and temperatures are written if enabled
 
 	`/config/sys-clk/context.csv`
+
+* sys-clk manager app (accessible from the hbmenu)
+
+	`/switch/sys-clk-manager.nro`
+
+* sys-clk overlay (accessible from anywhere by invoking the [Tesla menu](https://gbatemp.net/threads/tesla-the-nintendo-switch-overlay-menu.557362/))
+
+	`/switch/.overlays/sys-clk-overlay.ovl`
+	
+* sys-clk core sysmodule
+
+	`/atmosphere/contents/00FF0000636C6BFF/exefs.nsp`
+	`/atmosphere/contents/00FF0000636C6BFF/flags/boot2.flag`
 
 ## Config
 
@@ -54,7 +69,7 @@ handheld_mem=
 A list of games title id can be found in the [Switchbrew wiki](https://switchbrew.org/wiki/Title_list/Games).
 * Frequencies are expressed in mhz, and will be scaled to the nearest possible values, described in the clock table below.
 * If any key is omitted, value is empty or set to 0, it will be ignored, and stock clocks will apply.
-* If charging, sys clk will look for the frequencies in that order, picking the first found 
+* If charging, sys-clk will look for the frequencies in that order, picking the first found 
 	1. Charger specific config (USB or Official) `handheld_charging_usb_X` or `handheld_charging_official_X`
 	2. Non specific charging config `handheld_charging_X`
 	3. Handheld config `handheld_X`
